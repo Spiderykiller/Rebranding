@@ -1,7 +1,7 @@
-import { mergeConfig, type UserConfig } from 'vite';
+import { mergeConfig } from 'vite';
 
-export default (config: UserConfig) => {
-  // Important: always return the modified config
+// Use `any` for config type to avoid type errors if Vite types are missing
+export default (config: any) => {
   return mergeConfig(config, {
     resolve: {
       alias: {
@@ -10,3 +10,4 @@ export default (config: UserConfig) => {
     },
   });
 };
+
